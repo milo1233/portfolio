@@ -109,7 +109,20 @@ function Nav({ active }) {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/50">
       <div className="max-w-5xl mx-auto px-6 h-12 flex items-center justify-between">
-        <span className="text-white font-bold tracking-tight">SW<span className="text-blue-400">.</span></span>
+        <span className="flex items-center gap-1.5 text-white font-bold tracking-tight">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" className="w-6 h-6">
+                <defs><linearGradient id="navBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style={{stopColor:"#6366f1"}}/><stop offset="100%" style={{stopColor:"#8b5cf6"}}/></linearGradient></defs>
+                <rect x="4" y="4" width="120" height="120" rx="28" ry="28" fill="url(#navBg)"/>
+                <circle cx="44" cy="52" r="6" fill="#fff"/><circle cx="84" cy="52" r="6" fill="#fff"/>
+                <circle cx="46" cy="51" r="3" fill="#1e1b4b"/><circle cx="86" cy="51" r="3" fill="#1e1b4b"/>
+                <circle cx="48" cy="49" r="1.2" fill="#fff"/><circle cx="88" cy="49" r="1.2" fill="#fff"/>
+                <path d="M 44 72 Q 64 88 84 72" stroke="#fff" strokeWidth="4" strokeLinecap="round" fill="none"/>
+                <ellipse cx="34" cy="68" rx="8" ry="5" fill="#f0abfc" opacity="0.4"/>
+                <ellipse cx="94" cy="68" rx="8" ry="5" fill="#f0abfc" opacity="0.4"/>
+                <text x="64" y="38" textAnchor="middle" fontFamily="monospace" fontSize="14" fontWeight="bold" fill="#e0e7ff" opacity="0.7">&lt;/&gt;</text>
+              </svg>
+              SW<span className="text-blue-400">.</span>
+            </span>
         <div className="flex gap-1">
           {items.map((s) => (
             <button key={s.id} onClick={() => document.getElementById(s.id)?.scrollIntoView({ behavior: "smooth" })}
